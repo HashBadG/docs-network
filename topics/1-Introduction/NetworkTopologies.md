@@ -1,0 +1,95 @@
+# Networking 101: Understanding the Basics of Computer Networking.
+
+## Network Topologies
+
+- A network topology refers to the physical or logical arrangement of devices in a computer network. It determines how devices are connected to each other and how data flows within the network.
+
+### 1. Bus Topology
+
+- In a bus topology, all devices are connected to a single communication medium, called a bus. Data is transmitted along the bus, and all devices receive the transmitted data. However, only the intended recipient processes the data. If one device fails, it does affect the rest of the network.
+
+```mermaid
+graph LR
+    A[Device 1] -- Data --> B[Device 2]
+    B -- Data --> C[Device 3]
+    C -- Data --> D[Device 4]
+```
+
+### 2. Star Topology
+
+- In a star topology, all devices are connected to a central hub or switch. Data is transmitted between devices and the central hub or switch. If one device fails, it does not affect the rest of the network.
+
+```mermaid
+graph TB
+    Switch --> Device1
+    Switch --> Device2
+    Switch --> Device3
+    Switch --> Device4
+    Switch --> Device5
+```
+
+### 3. Ring Topology
+
+- In a ring topology, devices are connected in a circular loop, where each device is connected to two neighboring devices. Data travels in a unidirectional manner around the ring. If one device fails, the entire network may be affected.
+
+```mermaid
+graph LR
+    A[Device 1] -- Data --> B[Device 2]
+    B -- Data --> C[Device 3]
+    C -- Data --> D[Device 4]
+    D -- Data --> A
+```
+
+### 4. Mesh Topology
+
+- In a mesh topology, every device is connected to every other device in the network. It provides redundancy and fault tolerance as multiple paths are available for data transmission. It is commonly used in large-scale networks like the internet.
+
+```mermaid
+graph LR
+    A[Device 1] -- Data --> B[Device 2]
+    A -- Data --> C[Device 3]
+    A -- Data --> D[Device 4]
+    B -- Data --> C
+    B -- Data --> D
+    C -- Data --> D
+```
+
+### 5. Tree Topology
+
+- In a tree topology, devices are arranged in a hierarchical structure resembling a tree. It combines characteristics of both star and bus topologies. It is commonly used in larger networks with multiple subnets. It supports future network expansion but can become unstable if the "root" node fails.
+
+```mermaid
+graph TD;
+    A[Switch] --> B[Device 1];
+    A --> C[Device 2];
+    B --> D[Device 3];
+    B --> E[Device 4];
+    C --> F[Device 5];
+    C --> G[Device 6];
+```
+### 6. Hybrid Topology
+
+- A hybrid topology combines two or more different topologies to meet specific network requirements. For example, a star-ring hybrid topology connects multiple star topologies using a ring topology
+
+```mermaid
+graph TB
+A((Hub/Switch)) -- Ethernet Cable --> B((Device))
+A -- Ethernet Cable --> C((Device))
+A -- Ethernet Cable --> D((Device))
+A -- Ethernet Cable --> E((Device))
+A -- Ethernet Cable --> F((Device))
+B -- Ethernet Cable --> G((Device))
+C -- Ethernet Cable --> G
+D -- Ethernet Cable --> G
+E -- Ethernet Cable --> G
+F -- Ethernet Cable --> G
+G -- Ethernet Cable --> H((Device))
+G -- Ethernet Cable --> I((Device))
+G -- Ethernet Cable --> J((Device))
+G -- Ethernet Cable --> K((Device))
+G -- Ethernet Cable --> L((Device))
+
+```
+
+## Conclusion
+These are just a few examples of commonly used network topologies. The choice of topology depends on factors such as network size, scalability, fault tolerance, and cost-effectiveness. Network administrators select the appropriate topology based on the specific needs of their organization.
